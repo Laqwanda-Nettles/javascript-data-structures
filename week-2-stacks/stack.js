@@ -12,6 +12,10 @@ class Stack {
   pop() {
     return this.#storage.pop();
   }
+
+  peek() {
+    return this.#storage[this.#storage.length - 1];
+  }
 }
 
 const books = new Stack();
@@ -23,9 +27,12 @@ console.log(books);
 
 let b = books.pop();
 console.log(b);
-b = books.pop();
-console.log(b);
-b = books.pop();
-console.log(b);
+
+console.log(books.peek());
+
+// b = books.pop();
+// console.log(b);
+// b = books.pop();
+// console.log(b);
 
 //console.log(books.#storage);
