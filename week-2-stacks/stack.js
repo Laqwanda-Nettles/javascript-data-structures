@@ -1,14 +1,16 @@
 class Stack {
+  #storage;
+
   constructor() {
-    this.storage = [];
+    this.#storage = [];
   }
 
   push(book) {
-    this.storage.push(book);
+    this.#storage.push(book);
   }
 
   pop() {
-    return this.storage.pop();
+    return this.#storage.pop();
   }
 }
 
@@ -21,3 +23,9 @@ console.log(books);
 
 let b = books.pop();
 console.log(b);
+b = books.pop();
+console.log(b);
+b = books.pop();
+console.log(b);
+
+//console.log(books.#storage);
