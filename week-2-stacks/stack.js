@@ -16,6 +16,10 @@ class Stack {
   peek() {
     return this.#storage[this.#storage.length - 1];
   }
+
+  isEmpty() {
+    return this.#storage.length === 0 ? true : false;
+  }
 }
 
 const books = new Stack();
@@ -25,14 +29,17 @@ books.push("The Ultimate Hithiker's Guide to the Galaxy");
 books.push("Burroughs");
 console.log(books);
 
-let b = books.pop();
-console.log(b);
+let read = books.pop();
+console.log(read);
 
-console.log(books.peek());
+let nextBook = books.peek();
+console.log(nextBook);
 
-// b = books.pop();
-// console.log(b);
-// b = books.pop();
-// console.log(b);
+console.log(books.isEmpty());
 
+read = books.pop();
+read = books.pop();
+read = books.pop();
+
+console.log(books.isEmpty());
 //console.log(books.#storage);
