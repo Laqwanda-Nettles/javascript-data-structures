@@ -1,3 +1,4 @@
+import { input } from "@inquirer/prompts";
 // TODO: Create Stack and Queue classes.
 
 class Queue {
@@ -50,7 +51,7 @@ function isPalindrome(str) {
   let queue = new Queue();
 
   // TODO: Step 1: Sanitize the input
-  let sanitizedStr;
+  let sanitizedStr = str.toLowerCase().replace(/[^a-z0-9]/g, "");
 
   // TODO: Step 2: Push characters onto stack and enqueue them into queue
   for (let i = 0; i < sanitizedStr.length; i++) {
@@ -61,7 +62,7 @@ function isPalindrome(str) {
   }
 
   // TODO: Step 3: Compare characters by popping from stack and dequeuing from queue
-  while (!stack.isEmpty()) {
+  while (!stack.isEmpty() && !queue.isEmpty()) {
     let a = stack.pop();
     let b = queue.dequeue();
 
@@ -74,5 +75,7 @@ function isPalindrome(str) {
 }
 
 // Example usage:
-let inputStr = prompt("Enter a string to check for palindrome: ");
+let inputStr = await input({
+  message: "Enter a string to check for palindrome: ",
+});
 console.log(isPalindrome(inputStr));
